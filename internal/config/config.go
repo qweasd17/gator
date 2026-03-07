@@ -18,6 +18,10 @@ func (cfg *Config) SetUser(userName string) error {
 	return write(*cfg)
 }
 
+func (cfg *Config) GetUser() string {
+	return cfg.CurrentUserName
+}
+
 func Read() (Config, error) {
 	fullPath, err := getConfigFilePath()
 	if err != nil {
